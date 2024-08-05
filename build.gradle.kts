@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.ir.backend.js.compile
 import org.jetbrains.kotlin.konan.properties.Properties
 import java.io.FileInputStream
 
@@ -35,8 +34,9 @@ properties.forEach { key, value ->
 
 val pandoraRepoUrl = "https://repo.pandoras.dev/repository/maven2"
 val publishRepoName = "PandorasMinecraftLib"
-val nexusUsername = project.findProperty("nexusUsername") as String
-val nexusPassword = project.findProperty("nexusPassword") as String
+
+val nexusUsername = System.getenv("NEXUS_USERNAME") ?: project.findProperty("nexusUsername") as String
+val nexusPassword = System.getenv("NEXUS_PASSWORD") ?: project.findProperty("nexusPassword") as String
 
 
 repositories {
