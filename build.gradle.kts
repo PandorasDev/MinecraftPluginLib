@@ -38,6 +38,7 @@ val publishRepoName = "PandorasMinecraftLib"
 val nexusUsername = System.getenv("NEXUS_USERNAME") ?: project.findProperty("nexusUsername") as String
 val nexusPassword = System.getenv("NEXUS_PASSWORD") ?: project.findProperty("nexusPassword") as String
 
+println("Username:$nexusUsername\nPassword:$nexusPassword")
 
 repositories {
     mavenCentral()
